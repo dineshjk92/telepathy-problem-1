@@ -59,6 +59,10 @@ public class FindMeetingRooms {
                 meetingList.add(newMeetingTime);
                 meetingRooms.add(meetingList);
             } else {
+                //for each meeting, check whether it overlaps with existing meeting
+                //if it overlaps, create a new map entry and add the meeting
+                //if it doesn't overlap, add it to the same map entry
+                //No. of meeting rooms required will be the size of the map
                 for (int i=0; i<meetingRooms.size(); i++) {
                     List<MeetingTime> existingMeetingList = meetingRooms.get(i);
                     if(!isOverlapping(existingMeetingList, newMeetingTime)) {
